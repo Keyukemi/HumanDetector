@@ -8,7 +8,7 @@ body {
   font-family: 'Courier New', Courier, monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: conic-gradient(from -.4turn at bottom right, deeppink, cyan, rebeccapurple);
+  background: conic-gradient(from 90deg at bottom right, cyan, rebeccapurple);
   height: 100vh;
 
 }
