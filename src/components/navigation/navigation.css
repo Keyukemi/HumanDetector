@@ -1,0 +1,8 @@
+.navbar{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 30px;
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 30px;
+}

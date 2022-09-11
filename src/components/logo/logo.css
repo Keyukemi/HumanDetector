@@ -1,0 +1,23 @@
+
+.logoimg{
+    margin: 0 30px;
+    background-clip: content-box;
+    background: conic-gradient(from -.4turn at bottom right, deeppink, cyan, rebeccapurple);
+    width: 140px;
+    height: 140px;
+    text-align: left;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    
+    
+}
+
+.logoimg:hover{
+    cursor: pointer;
+}
+
+.brainicon{
+    width: 100px;
+    margin: 30px;
+}
