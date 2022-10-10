@@ -1,0 +1,36 @@
+.fatherBox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 200px;
+}
+
+.imageBox {
+    position: fixed;
+    border: 10px solid black;
+
+}
+
+.thepic {
+    width: 500px;
+    height: auto;
+}
+
+.bounding-box {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 0 0 3px white inset;
+}
+
+@media only screen and (max-width: 600px){
+    .thepic{
+        width: 300px;
+        height: auto;
+    }
+    .fatherBox{
+        margin-top: 150px;
+    }
+}
