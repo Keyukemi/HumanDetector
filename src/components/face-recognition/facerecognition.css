@@ -2,18 +2,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 200px;
+   
 }
 
 .imageBox {
-    position: fixed;
-    border: 10px solid black;
+    position: relative;
 
 }
 
 .thepic {
     width: 500px;
     height: auto;
+    
 }
 
 .bounding-box {
@@ -22,7 +22,7 @@
     flex-wrap: wrap;
     justify-content: center;
     cursor: pointer;
-    box-shadow: 0 0 0 3px white inset;
+    box-shadow: 0 0 0 5px white inset;
 }
 
 @media only screen and (max-width: 600px){
@@ -30,7 +30,5 @@
         width: 300px;
         height: auto;
     }
-    .fatherBox{
-        margin-top: 150px;
-    }
 }
+

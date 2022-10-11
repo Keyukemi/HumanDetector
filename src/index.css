@@ -9,8 +9,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: conic-gradient(from 90deg at bottom right, cyan, rebeccapurple);
-  height: 100vh;
-
+  min-height: 100vh; 
+  overflow:auto;
+  
 }
 
 code {
