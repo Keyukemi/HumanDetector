@@ -1,6 +1,6 @@
 
 .logoimg{
-    margin: 0 30px;
+    margin: 0px 0 0 30px;
     background-clip: content-box;
     background: conic-gradient(from 90deg at bottom right, cyan, rebeccapurple);
     width: 140px;
@@ -8,9 +8,7 @@
     text-align: left;
     border-radius: 100px;
     display: flex;
-    align-items: center;
-    
-    
+    align-items: center; 
 }
 
 .logoimg:hover{

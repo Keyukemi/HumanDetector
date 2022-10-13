@@ -1,0 +1,68 @@
+.formBox{
+    text-align: center;
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    color: white;
+
+}
+
+@media screen and (min-width: 600px) {
+    .loginForm{
+        padding: 5rem;
+        border: 1px solid white;
+        border-radius: 10px;
+        margin: 0.5rem;
+        box-shadow:
+        0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+        0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+        0 12.5px 10px rgba(0, 0, 0, 0.06),
+        0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+        0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+        0 100px 80px rgba(0, 0, 0, 0.12)
+    }
+}
+
+
+
+.loginForm, .credentialBox{
+    display: flex;
+    flex-direction: column;
+    font-weight: bold ;
+}
+
+label{
+    text-align: left;
+    padding: 0.35rem 0;
+
+}
+
+input{
+    margin: 0.5rem 0;
+    padding: 1rem;
+    border-radius: 20px;
+    border: none;
+}
+
+button{
+    border: none;
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 10px;
+    cursor: pointer;
+    color: rebeccapurple;
+}
+
+
+.linkBtn{
+    text-decoration: underline; 
+    background: none;
+    color: white;
+    font-weight: bold;
+}
+
+.fgPass{
+    text-decoration: none;
+}

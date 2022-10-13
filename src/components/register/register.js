@@ -1,24 +1,24 @@
 import "./register.css";
 
-const Register = () => {
+const Register = ({onRouteChange}) => {
     return (
-        <form action="" className="formBox">
-            <fieldset className="fieldBox">
-                <legend>Sign In</legend>
-                <div className="usernameBox">
-                    <label htmlFor="">Email</label>
-                    <input type="email" className="inputEmail"  placeholder="address@email.com"/>
-                </div>
-                <div className="passwordBox">
-                    <label htmlFor="">Password</label>
-                    <input type="password" placeholder="enter password"/>
-                </div>
-            </fieldset>
-            <div className="submitBox">
-                <input type="submit" name="" id="" />
+        <div className="formBox">
+        <div action="" className="loginForm">
+            <h2>Register</h2>
+            <div className="credentialBox">
+                <label htmlFor="name" className="label">Full Name</label>
+                <input type="name" placeholder="Your full name"/>
+                <label htmlFor="email" className="label">Email</label>
+                <input  type="email" className="inputEmail"  placeholder="address@email.com"/>
+                <label htmlFor="password" className="label">Password</label>
+                <input type="password" placeholder="*********"/>
             </div>
-        </form>
-
+            <div className="submitBox">
+                <button type="submit" onClick={() => onRouteChange('home')} >Register</button>
+            </div>
+                <button type="submit" onClick={() => onRouteChange('Signin')} className="linkBtn"> Have an account? Login here</button>
+        </div>
+    </div>
     )
 }
 
