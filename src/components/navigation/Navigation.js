@@ -1,13 +1,13 @@
 import "./navigation.css";
 
-const Navigation = ({onRouteChange, isSignedIn}) =>{
-    if (isSignedIn){
+const Navigation = ({ onRouteChange, isSignedIn }) => {
+    if (isSignedIn) {
         return (
             <nav className="navbar">
                 <button onClick={() => onRouteChange('signout')} className="soBtn">SIGN OUT</button>
             </nav>
         );
-    }else{
+    } else {
         return (
             <nav className="navbar">
                 <button onClick={() => onRouteChange('Signin')} className="soBtn">SIGN IN</button>
@@ -15,7 +15,7 @@ const Navigation = ({onRouteChange, isSignedIn}) =>{
             </nav>
         );
     }
-   
+
 }
 
 export default Navigation;

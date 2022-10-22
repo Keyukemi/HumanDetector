@@ -11,9 +11,6 @@ import Rank from './components/rank-file/rank';
 import { Component } from 'react';
 
 
-// const app = new Clarifai.App({
-//  apiKey: '6a637c2dd5fc4565a006d894e982b334'
-// });
 
 class App extends Component {
   constructor() {
@@ -23,12 +20,33 @@ class App extends Component {
       imageUrl: '',
       box: {},
       route: 'Signin',
-      isSignedIn: false
+      isSignedIn: false,
+      user: {
+        id: "",
+        name: "",
+        email: "",
+        entries: 0,
+        joined: ""
+      }
     }
   }
 
+  loadUser = (data) => {
+    this.setState({
+      user: {
+        id: data.id,
+        name: data.name,
+        email: data.email,
+        entries: data.entries,
+        joined: data.joined
+      }
+    })
+  }
+
+
   calcFaceLoc = (data) => {
     const getFace = data.outputs[0].data.regions[0].region_info.bounding_box;
+    //console.log(getFace);
     const image = document.getElementById('inputedImage');
     const width = Number(image.width);
     const height = Number(image.height);
@@ -51,7 +69,7 @@ class App extends Component {
 
   onButtonSubmit = () => {
     this.setState({ imageUrl: this.state.input });
-    //console.log('click');
+
 
     const USER_ID = 'vtszy7uwboz9';
     // Your PAT (Personal Access Token) can be found in the portal under Authentification
@@ -89,24 +107,38 @@ class App extends Component {
 
     fetch("https://api.clarifai.com/v2/models/" + MODEL_ID + "/versions/" + MODEL_VERSION_ID + "/outputs", requestOptions)
       .then(response => response.json())
-      .then(result => this.showFaceBox(this.calcFaceLoc(result)))
+      .then(response => {
+        if (response) {
+          fetch('http://localhost:3000/image', {
+            method: 'put',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              id: this.state.user.id
+            })
+          })
+            .then(response => response.json())
+            .then(count => {
+              this.setState(Object.assign(this.state.user, { entries: count }))
+            })
+        }
+        this.showFaceBox(this.calcFaceLoc(response))
+      })
       .catch(error => console.log('error', error));
-
   }
 
   onRouteChange = (route) => {
     if (route === 'signout') {
       this.setState({ isSignedIn: false })
-    } 
-    else if (route === 'home'){
+    }
+    else if (route === 'home') {
       this.setState({ isSignedIn: true })
-    } 
+    }
     this.setState({ route: route });
   }
 
 
   render() {
-    const {isSignedIn, imageUrl, route, box} = this.state;
+    const { isSignedIn, imageUrl, route, box } = this.state;
     return (
       <div className="App">
         <ParticlesBackground />
@@ -114,15 +146,14 @@ class App extends Component {
         <Logo />
         {route === 'home'
           ? <div>
-            
-            <Rank />
+            <Rank name={this.state.user.name} entries={this.state.user.entries} />
             <ImageLinkForm onInputChange={this.onInputChange} onButtonSubmit={this.onButtonSubmit} />
             <FaceRecognition box={box} imageUrl={imageUrl} />
           </div>
           : (
             this.state.route === 'Signin'
-              ? <Signin onRouteChange={this.onRouteChange} />
-              : <Register onRouteChange={this.onRouteChange} />
+              ? <Signin loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
+              : <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
           )
 
         }

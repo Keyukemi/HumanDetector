@@ -1,13 +1,13 @@
 import './rank.css'
 
-const Rank = () =>{
+const Rank = ({ name, entries }) => {
     return (
         <div className="ranker">
             <div className="rankername">
-                {'Keyu, Your current Rank is'}
+                {`${name}, your current entry count is...`}
             </div>
             <div className="rankerstat">
-                {'#5'}
+                {entries}
             </div>
         </div>
     );

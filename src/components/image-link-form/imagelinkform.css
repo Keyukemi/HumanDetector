@@ -1,10 +1,10 @@
-.boxtitle{
+.boxtitle {
     font-size: 30px;
     font-weight: 600;
     color: rgb(247, 241, 229);
 }
 
-.inputbox{
+.inputbox {
     background-color: rgb(220, 227, 232, 0.2);
     display: flex;
     justify-content: center;
@@ -12,10 +12,10 @@
     margin: 10px 300px;
     border-radius: 60px;
     box-shadow: 10px -2px 20px 2px rgb(0 0 0 /30%);
-    
+
 }
 
-.inputurl{
+.inputurl {
     width: 70%;
     height: 50px;
     background: transparent;
@@ -25,7 +25,7 @@
     padding: 5px 20px;
 }
 
-.detectbutton{
+.detectbutton {
     width: 10%;
     background: transparent;
     outline: none;
@@ -40,19 +40,20 @@
 
 }
 
-.detectbutton:hover{
+.detectbutton:hover {
     background-color: rgb(220, 227, 232, 0.2);
     border-radius: 60px;
-    
+
 }
-.scanicon{
+
+.scanicon {
     width: 40px;
 }
 
 @media only screen and (max-width: 800px) {
-    .inputbox{
-     width: 90%;
-     margin-left: 25px;
+    .inputbox {
+        width: 90%;
+        margin-left: 25px;
     }
-    
+
 }
