@@ -16,12 +16,13 @@
     "react-router-dom": "^6.4.2",
     "react-scripts": "5.0.1",
     "react-tsparticles": "^2.2.4",
+    "serve": "^14.0.1",
     "solid-particles": "^2.2.4",
     "tsparticles": "^2.2.4",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "serve -s build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
