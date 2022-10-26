@@ -1,6 +1,5 @@
 import './App.css';
 import ParticlesBackground from './components/particlesbg/particlesbg';
-//import Clarifai from 'clarifai';
 import FaceRecognition from './components/face-recognition/facerecognition';
 import ImageLinkForm from './components/image-link-form/imagelinkform';
 import Logo from './components/logo/logo';
