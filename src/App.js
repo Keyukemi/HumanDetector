@@ -68,7 +68,7 @@ class App extends Component {
 
   onButtonSubmit = () => {
     this.setState({ imageUrl: this.state.input });
-    fetch("https://nameless-cliffs-78176.herokuapp.com/imageurl", {
+    fetch("https://human-detector-api-production.up.railway.app/imageurl", {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -78,7 +78,7 @@ class App extends Component {
       .then(response => response.json())
       .then(response => {
         if (response) {
-          fetch('https://nameless-cliffs-78176.herokuapp.com/image', {
+          fetch('https://human-detector-api-production.up.railway.app/image', {
             method: 'put',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
