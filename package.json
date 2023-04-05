@@ -13,6 +13,7 @@
     "animate.css": "^4.1.1",
     "bootstrap": "^5.2.2",
     "clarifai": "^2.9.1",
+    "cors": "^2.8.5",
     "hts-react-form": "^0.0.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
